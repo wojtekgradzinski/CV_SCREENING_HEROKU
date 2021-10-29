@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<htmll lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Screening App</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
+
+</head>
+
+<body>
+    <h2 class="title">CV Screening App</h2>
+     
+    <form id="file-upload-form" class="uploader" method="POST" action="" action="/action_page.php" enctype="multipart/form-data">
+        <div class="body" id="drop">
+            <i class="fa fa-download" aria-hidden="true"></i><br>
+            <p class="pointer-none"><a href="" id="triggerFile">Browse</a> files to upload the resumes</p>
+                     <input type="file" name="file" multiple="multiple" style="display: none;"/>
+        </div>
+        <div id="files-submitted" class="hidden">
+            <div id="response" class="list-files">
+
+            </div>
+            
+        </div>
+        <textarea name="job"> Write Job description here...</textarea>
+        <input type="submit" class="btn file-submit-btn">
+        
+        <p>{{resume}}</p>
+    <table style="border:1px solid black; width:100%">
+        <tr>
+            <th style="border:1px solid black">Resume</th>
+            <th style="border:1px solid black">Percentage of skills fulfilled</th>
+           
+        </tr>
+                 
+        {% for key, value in dic.items() %}
+        <tr>
+            <td style="border:1px solid black">{{key}}</td>
+            <td style="border:1px solid black">{{value}}</td>
+        </tr>
+        {%endfor%}
+          
+    </table>
+
+    </form>
+    <script  src="../static/script.js"></script>
+
+</body>
+
+</html>
