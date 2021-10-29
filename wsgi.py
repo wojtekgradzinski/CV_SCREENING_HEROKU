@@ -32,7 +32,7 @@ def home():
             skill = []
             for key,_ in annotations['results'].items():
                 for ls in annotations['results'][key]:
-                    skill.applicationend(ls['skill_id'])
+                    skill.append(ls['skill_id'])
             return skill
     def scoring(job_skills,cv_skills):
         score = 0
