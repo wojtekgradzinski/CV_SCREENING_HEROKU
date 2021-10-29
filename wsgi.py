@@ -10,9 +10,9 @@ nlp = spacy.load("en_core_web_sm")
 # init skill extractor
 skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/", methods=["POST", "GET"])
+@application.route("/", methods=["POST", "GET"])
 def home():
   
 
@@ -32,7 +32,7 @@ def home():
             skill = []
             for key,_ in annotations['results'].items():
                 for ls in annotations['results'][key]:
-                    skill.append(ls['skill_id'])
+                    skill.applicationend(ls['skill_id'])
             return skill
     def scoring(job_skills,cv_skills):
         score = 0
@@ -107,4 +107,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
